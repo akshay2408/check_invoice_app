@@ -1,0 +1,24 @@
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
+/home/developer/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-8z1kd6 sitelibdir\=./.gem.20250328-53986-8z1kd6 clean
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-8z1kd6 sitelibdir\=./.gem.20250328-53986-8z1kd6
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.so
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-8z1kd6 sitelibdir\=./.gem.20250328-53986-8z1kd6 install
+/usr/bin/install -m 0755 date_core.so ./.gem.20250328-53986-8z1kd6
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-8z1kd6 sitelibdir\=./.gem.20250328-53986-8z1kd6 clean

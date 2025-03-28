@@ -1,0 +1,19 @@
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+/home/developer/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-4d26bl sitelibdir\=./.gem.20250328-53986-4d26bl clean
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-4d26bl sitelibdir\=./.gem.20250328-53986-4d26bl
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-4d26bl sitelibdir\=./.gem.20250328-53986-4d26bl install
+/usr/bin/install -m 0755 debug.so ./.gem.20250328-53986-4d26bl/debug
+
+current directory: /home/developer/check_invoice_app/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-53986-4d26bl sitelibdir\=./.gem.20250328-53986-4d26bl clean
