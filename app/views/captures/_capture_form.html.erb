@@ -1,0 +1,42 @@
+<form id="captureForm" action="/checks" method="POST" enctype="multipart/form-data" class="overflow-hidden">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <div class="mb-3">
+    <img id="photo" class="img-thumbnail d-none" width="150">
+    <button type="button" class="btn btn-primary" onclick="openCamera()">Open Camera</button>
+  </div>
+
+  <div id="cameraContainer" class="mb-3 d-none">
+    <video id="video" class="border rounded" width="200" height="150" autoplay></video>
+    <br>
+    <button type="button" class="btn btn-success mt-2" onclick="capturePhoto()">Capture Photo</button>
+  </div>
+
+  <input type="hidden" id="imageData" name="image">
+
+  <div class="mb-3">
+    <label class="form-label">Invoices (comma-separated)</label>
+    <textarea class="form-control" id="invoiceNumbers" name="invoice_numbers" rows="5" placeholder="e.g., 1001,1002,1003"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <select class="form-select" aria-label="Company" name="company_id" id="companySelect">
+     <option value="">-- Select Company --</option>
+      <% @companies.each do |company| %>
+        <option value="<%= company.id %>"><%= company.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <div class="row g-3 align-items-center">
+        <div class="col-lg-1 col-md-12 col-12">
+          <label for="inputPassword6" class="col-form-label">Check</label>
+        </div>
+        <div class="col-lg-11 col-md-12 col-12">
+          <input type="text" class="form-control" id="checkNumber" name="check_number" placeholder="Enter Check Number">
+        </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

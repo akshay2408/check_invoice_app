@@ -1,0 +1,30 @@
+<% if flash[:success] %>
+  <div class="d-block alert-success">
+    <row>
+      <div class="col-12">
+          <div class="p-lg-3 p-md-3 p-3 text-center"
+              style="background-color: #dddddd; border-radius: 10px;">
+              <div class="mb-5">
+                <h6><%= flash[:success]["company_name"] %></h6>
+                <h6>Check <%= flash[:success]["check_number"] %></h6>
+                <h6>Uploaded!</h6>
+              </div>
+              <div class="">
+                <%= image_tag "emoji.png", alt: "Emoji", class: "", style: "width: 70px; height: 70px; object-fit: contain;" %>
+              </div>
+              <div class="mt-5">
+								<h6>Invoices</h6>
+								<h6><%= flash[:success]["invoices"].join(", ") if flash[:success]["invoices"].present? %></h6>
+              </div>
+          </div>
+          <form>
+						<div class="mb-3 mt-4 text-center">
+							<button type="button"
+								class="btn btn-primary px-4 py-2" onclick="openCheckForm()">Upload
+								New Check</button>
+						</div>
+          </form>
+      </div>
+    </row>
+  </div>
+<% end %>

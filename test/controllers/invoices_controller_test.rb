@@ -1,19 +1,19 @@
 require "test_helper"
 
-class CompaniesControllerTest < ActionDispatch::IntegrationTest
+class InvoicesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:one)
     sign_in @user
-    @company1 = companies(:one)
-    @company2 = companies(:two)
+    @invoice1 = invoices(:one)
+    @invoice2 = invoices(:two)
   end
 
   test "should get index as JSON" do
-    get companies_path, as: :json
+    get invoices_path, as: :json
     assert_response :success
 
     json_response = JSON.parse(@response.body)
-    expected_names = [@company2.name, @company1.name]
+    expected_names = [@invoice1.name, @invoice2.name]
     assert_equal expected_names, json_response.map { |c| c["name"] }
   end
 end

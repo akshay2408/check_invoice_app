@@ -1,0 +1,44 @@
+
+    <section class="signupSec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-12 mx-auto">
+                    <div class="signup_content p-lg-5 p-md-5 p-3"
+                        style="background-color: #ededed; border-radius: 10px;">
+                        <h2 class="mb-lg-5 mb-md-5 mb-4 text-center">Sign Up</h2>
+
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { data: { turbo: false } }) do |f| %>
+                           
+                            <div class="mb-3">
+                                <%= f.label :email, "Email", class: "form-label" %>
+                                <%= f.email_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true, autocomplete: "email" %>
+                            </div>
+
+                            <div class="mb-3">
+                                <%= f.label :password, "Password", class: "form-label" %>
+                                <% if @minimum_password_length %>
+                                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                <% end %>
+                                <%= f.password_field :password, class: "form-control", placeholder: "Enter your password", autocomplete: "new-password" %>
+                            </div>
+
+                            <div class="mb-3">
+                                <%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
+                                <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Enter your confirm password", autocomplete: "new-password" %>
+                            </div>
+
+                            <div class="mb-3 text-center">
+                                <%= f.submit "Sign up", class: "btn btn-primary px-4 py-2" %>
+                            </div>
+
+                            <div class="mb-3 text-center">
+                                <p>Have an account? <span><a href="login.html">Log in</a></span></p>
+                            </div>
+
+                        <% end %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

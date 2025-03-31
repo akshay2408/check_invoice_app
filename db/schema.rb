@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_28_091343) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_31_063542) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -42,6 +42,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_28_091343) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "check_invoices", force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "invoice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["check_id"], name: "index_check_invoices_on_check_id"
+    t.index ["invoice_id"], name: "index_check_invoices_on_invoice_id"
+  end
+
+  create_table "checks", force: :cascade do |t|
+    t.bigint "number"
+    t.string "image"
+    t.bigint "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_checks_on_company_id"
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -56,7 +74,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_28_091343) do
     t.index ["company_id"], name: "index_invoices_on_company_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "check_invoices", "checks"
+  add_foreign_key "check_invoices", "invoices"
+  add_foreign_key "checks", "companies"
   add_foreign_key "invoices", "companies"
 end

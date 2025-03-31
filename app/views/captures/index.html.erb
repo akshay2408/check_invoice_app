@@ -1,1 +1,58 @@
-<h1>hii</h1>
+<div class="container py-4">
+	<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" data-tab="capture">Capture</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" data-tab="checks">Checks</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" data-tab="invoices">Invoice</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" data-tab="companies">Companies</button>
+		</li>
+	</ul>
+</div>
+
+<section class="mainScreen">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-12 mx-auto">
+				<div class="tabsBox p-lg-5 p-md-5 p-3" style="background-color: #ededed; border-radius: 10px;">
+					<% if flash[:error] %>
+						<div class="alert alert-danger"><%= flash[:error] %></div>
+					<%end%>
+					<%= render 'success_flash' %>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="capture" role="tabpanel"
+								aria-labelledby="capture-tab">
+							<div class="tab_inner">
+								<div id="tabContent" class="table-responsive" >
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="checks" role="tabpanel" aria-labelledby="checks-tab">
+							<div class="tab_inner">
+								<div id="tabContent" class="table-responsive text-nowrap">
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="invoices" role="tabpanel" aria-labelledby="invoices-tab">
+							<div class="tab_inner">
+								<div id="tabContent" class="table-responsive text-nowrap" > 
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="companies" role="tabpanel" aria-labelledby="companies-tab">
+							<div class="tab_inner">
+								<div id="tabContent" class="table-responsive text-nowrap">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
