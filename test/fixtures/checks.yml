@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  number: 987654
+  number: '987654'
   image: MyString
   company: one
 
 two:
-  number: 987654
+  number: '987654'
   image: MyString
   company: two

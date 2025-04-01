@@ -12,6 +12,6 @@ class CapturesController < ApplicationController
   private
 
   def companies
-    companies ||= Company.all
+    @companies ||= Company.all
   end
 end
